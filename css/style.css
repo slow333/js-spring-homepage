@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Noto Sans KR", "Roboto",serif;
+  height: 100%;
+  position: relative;
+}
+/*::-webkit-scrollbar {*/
+/*  display: none;*/
+/*}*/
+
+main {
+  padding: 48px 5px 0 206px;
+  overflow: auto;
+  margin:0 0 40px 0;
+  min-height: calc(94.04vh);
+}
+section {
+  margin: 0;
+  padding: 0 10px 10px 10px;
+  border-right: rgba(60, 60, 60, 0.32) solid 8px;
+  border-left: rgba(60, 60, 60, 0.32) solid 8px;
+  border-top: #f1f1f1 solid 8px;
+  background: #fff;
+}
+section:last-child {
+  border-bottom: #f1f1f1 solid 8px;
+}
+footer {
+  width: 100%;
+  padding: 6px 20px;
+  position : absolute;
+  background: #777;
+  color: #f1f1f1;
+}
+h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+h1:before, h1:after {
+  content: "|";
+  color: #aaa;
+  padding: 0 8px;
+}
+h2, h3 {
+  font-size: 23px;
+  margin: 4px;
+  text-align: left;
+}
+h3 {font-size: 20px}
+p {
+  line-height: 1.6;
+  font-size: 1rem;
+  padding-left: 6px;
+  font-family: "Roboto","Noto Sans KR", serif;
+}
+
+code, pre {
+  font-family: "consolas", monospace;
+  background: rgba(234, 234, 234, 0.52);
+  padding: 2px 6px;
+  width: 100%;
+  margin: 0 4px;
+}
+table {
+  display: table;
+  /*border-collapse: separate;*/
+  box-sizing: border-box;
+  text-indent: initial;
+  unicode-bidi: isolate;
+  border-spacing: 2px;
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  font-size: 15px;
+  width: 100%;
+  margin: 4px;
+}
+tr, td, th {
+  border: 1px solid #dddddd;
+  border-collapse: collapse;
+}
+/* ====== nav menu ====== */
+.navbar {
+  position: fixed;
+  display: flex;
+  top: 0;
+  align-items: center;
+  width: 100%;
+  background-size: cover;
+  background-color: #712cf9;
+  color: white;
+  z-index: 9;
+}
+.navbar .nav {
+  cursor: pointer;
+}
+.navbar a:link,
+.navbar a:visited{
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Roboto",serif;
+  color: white;
+  text-decoration: none;
+}
+.navbar .nav:hover a {
+  background-color: #fff;
+  color: #712cf9;
+  /*border: 5px solid #712cf9;*/
+}
+
+.aside {
+  position: fixed;
+  top: 38px;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  box-shadow: 0 0 4px #666;
+  padding: 18px 10px 10px 10px;
+  height: 100%;
+  overflow-y: auto;
+}
+.aside .title {
+  font-size: 24px;
+  font-weight: bolder;
+  color: #fefefe;
+  background-color: #333;
+  text-align: center;
+  padding: 6px 0;
+  font-family: "Roboto",serif;
+}
+
+.aside .sub{
+  color: #555;
+  padding: 10px 0 0 0 ;
+  margin-bottom: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+.aside .sub:hover{
+  color: #aaa;
+  cursor: pointer;
+}
+.aside .content {
+  display: block;
+  width: 180px;
+  font-size: 15px;
+}
+.aside .content.active {
+  display: none;
+}
+.aside .content a{
+  margin: 0 10px;
+  padding: 3px 6px;
+  display: inline-block;
+  text-decoration: none;
+  width: 170px;
+}
+.aside a:link,
+.aside a:visited
+{
+  text-decoration: none;
+  color: #5600f3;
+  font-weight: 400;
+}
+
+.aside .content:hover a{
+  cursor: pointer;
+  color: yellow;
+  display: inline-block;
+  background-color: darkgreen;
+}
+
+hr {
+  margin: 1rem 0;
+  padding: 0;
+  border: 1px dotted darkorange;
+}
