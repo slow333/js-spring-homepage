@@ -165,24 +165,7 @@ tr, td, th {
   padding: 6px 0;
   font-family: "Roboto",serif;
 }
-.aside > ul {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-}
-.aside ul li {
-  list-style: none;
-  padding: 0;
-  margin:0;
-}
-.aside ul li:hover {
-  background-color: #ddd;
-  cursor: pointer;
-}
-.aside ul li ul {
-  padding: 0;
-  margin:0;
-}
+
 .aside .sub{
   color: #555;
   padding: 10px 0 0 0 ;

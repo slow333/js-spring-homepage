@@ -51,6 +51,23 @@
     <h3>3항 연산 ; <code>condition ? "true": "false"</code></h3>
   </section>
   <section>
+    <h3>nullish 병합 연산자 ??</h3>
+    <pre> a ?? b ; a가 null이나 undefined면 b</pre>
+    <pre>let firstName = null;
+let lastName = null;
+let nickName = "바이올렛";
+
+// null이나 undefined가 아닌 첫 번째 피연산자
+alert(firstName ?? lastName ?? nickName ?? "익명의 사용자"); // 바이올렛</pre>
+    <h4>'??'와 '||'의 차이</h4>
+    <pre>let height = 0;
+alert(height || 100); // 100
+alert(height ?? 100); // 0</pre>
+    <p>||는 height가 0 이므로 false여서 100이 됨</p>
+    <h4>이래서 초기화 시에 주로 || 대신 ??를 많이 사용함</h4>
+    <p>??와 ||, && 동시 사용안됨(사용하고 싶으면 ||, &&를 괄호로 묶어서 사용)</p>
+  </section>
+  <section>
      <input type="text" id="fname" size="20" name="fname" />
   </section>
   <section id="exercise"></section>

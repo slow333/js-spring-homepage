@@ -12,7 +12,15 @@ function asideInfo(url) {
    aside.send();
    aside.onload = function load() {
       nav.innerHTML += aside.responseText;
-      document.querySelector('.navbar')
+
+      let navbar = document.querySelector('.navbar');
+      navbar.onclick = function (e) {
+         e.preventDefault();
+         let target = e.target
+         if(target.tagName !== 'A') return;
+         console.log(target.textContent);
+      }
+
       let selectedAside = document.querySelector('#sub-nav');
       let toggleSubNav = document.querySelectorAll('#sub-nav .content-toggle');
       let links = selectedAside.querySelectorAll('a');

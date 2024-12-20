@@ -12,35 +12,35 @@ function asideInfo(url) {
    aside.send();
    aside.onload = function load() {
       nav.innerHTML += aside.responseText;
-      document.querySelector('.navbar')
-      let selectedAside = document.querySelector('#sub-nav');
-      let toggleSubNav = document.querySelectorAll('#sub-nav .content-toggle');
+      let selectedAside = document.querySelector('.aside')
       let links = selectedAside.querySelectorAll('a');
-
       document.querySelectorAll('.content-toggle').forEach(el => {
          el.hidden = localStorage.getItem('id') !== el.id;
       });
-      links.forEach((item) => currentLink(item));
+      let aTag = document.querySelectorAll('.aside a');
+      aTag.forEach((item) => currentLink(item));
 
-      selectedAside.onclick = function(event) {
-         let target = event.target;
-         if(target.tagName !== 'LI') return;
-         // if(!target.classList.contains('sub-content')) return;
-         toggleSubNav.forEach(toggle => toggle.hidden = true);
-         let contentToggle = target.querySelector('ul');
-         contentToggle.hidden = !contentToggle.hidden;
-      }
+      selectedAside.onclick = event => toggleMenu (event);
       links.forEach(link => {
-         link.onclick = (event) => setTimeout(() => {
-            let id = event.target.closest('.content-toggle').id;
-            localStorage.setItem('id', id);
-         });
+         link.onclick = (event) => setLocalStorageId(event);
       })
    }
 }
 
 asideInfo(asideUrl);
 
+function setLocalStorageId(event) {
+   let id = event.target.closest('.content-toggle').id;
+   localStorage.setItem('id', id);
+}
+
+function toggleMenu(event) {
+   let id = event.target.dataset.toggleId;
+   let elem = document.getElementById(id);
+
+   if (!id) return;
+   elem.hidden = !elem.hidden;
+}
 function currentLink(item) {
    if(item.href === location.href) {
       item.style.color = 'white';
