@@ -9,8 +9,16 @@
 *::after {
   box-sizing: border-box;
 }
+:root {
+  --fontstack: 'Noto Sans KR', sans-serif;
+  --colorprimary:black;
+  --colorsecondary: white;
+  --coloraccent: #712cf9;
+  --colorgray:#777;
+  --colorbright:#f1f1f1;
+}
 body {
-  font-family: "Noto Sans KR", "Roboto",serif;
+  font-family: var(--fontstack), serif ;
   height: 100%;
   position: relative;
 }
@@ -27,20 +35,20 @@ main {
 section {
   margin: 0;
   padding: 0 10px 10px 10px;
-  border-right: rgba(60, 60, 60, 0.32) solid 8px;
-  border-left: rgba(60, 60, 60, 0.32) solid 8px;
-  border-top: #f1f1f1 solid 8px;
-  background: #fff;
+  border-right: var(--colorbright) solid 8px;
+  border-left: var(--colorgray) solid 8px;
+  border-top: var(--colorbright) solid 8px;
+  background: var(--colorsecondary);
 }
 section:last-child {
-  border-bottom: #f1f1f1 solid 8px;
+  border-bottom: var(--colorbright) solid 8px;
 }
 footer {
   width: 100%;
   padding: 6px 20px;
   position : absolute;
-  background: #777;
-  color: #f1f1f1;
+  background: var(--colorgray);
+  color: var(--colorsecondary);
 }
 h1 {
   font-size: 30px;
@@ -49,7 +57,7 @@ h1 {
 }
 h1:before, h1:after {
   content: "|";
-  color: #aaa;
+  color:var(--colorprimary);
   padding: 0 8px;
 }
 h2, h3, h4, h5, h6 {
@@ -61,7 +69,7 @@ h2, h3, h4, h5, h6 {
 h2:before {
   content: "◼";
   padding-right: 8px;
-  color: rgba(255, 69, 0, 0.82);
+  color: var(--coloraccent);
 }
 h3 {
   font-size: 20px;
@@ -70,7 +78,7 @@ h3 {
 h3:before {
   content: "◾";
   padding-right: 8px;
-  color: #712cf9;
+  color: var(--coloraccent);
 }
 h4  {
   font-size: 18px;
@@ -122,27 +130,20 @@ tr, td, th {
   align-items: center;
   width: 100%;
   background-size: cover;
-  background-color: #712cf9;
-  color: white;
+  background-color: var(--coloraccent);
+  color: var(--colorsecondary);
   z-index: 9;
 }
-.navbar .nav {
+.navbar li {
   cursor: pointer;
+  list-style: none;
+  padding: 10px 10px;
+  margin:0;
 }
-.navbar a:link,
-.navbar a:visited{
-  display: inline-block;
-  padding: 8px 16px;
-  font-size: 20px;
-  font-weight: bold;
-  font-family: "Roboto",serif;
-  color: white;
-  text-decoration: none;
-}
-.navbar .nav:hover a {
-  background-color: #fff;
-  color: #712cf9;
-  /*border: 5px solid #712cf9;*/
+
+.navbar li:hover {
+  background-color: var(--colorbright);
+  color: var(--coloraccent);
 }
 /* #### aside menu #### */
 .aside {
@@ -163,7 +164,7 @@ tr, td, th {
   background-color: #333;
   text-align: center;
   padding: 6px 0;
-  font-family: "Roboto",serif;
+  font-family: var(--fontstack);
 }
 .aside > ul {
   display: flex;
